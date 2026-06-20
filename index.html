@@ -235,6 +235,51 @@
 			background: var(--white);
 		}
 
+		.nav-utils {
+			display: inline-flex;
+			align-items: center;
+			gap: 14px;
+		}
+
+		.lang-toggle {
+			display: inline-flex;
+			align-items: center;
+			padding: 3px;
+			border: 1px solid rgba(255, 255, 255, 0.22);
+			border-radius: 9px;
+			background: rgba(255, 255, 255, 0.06);
+			backdrop-filter: blur(8px);
+		}
+
+		.lang-toggle button {
+			font-family: var(--font-heading);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 42px;
+			min-height: 32px;
+			padding: 0 10px;
+			border: 0;
+			border-radius: 7px;
+			background: transparent;
+			color: rgba(255, 255, 255, 0.66);
+			font-weight: 800;
+			font-size: 0.76rem;
+			letter-spacing: 0.06em;
+			cursor: pointer;
+			transition: background 160ms ease, color 160ms ease;
+		}
+
+		.lang-toggle button:hover {
+			color: var(--white);
+		}
+
+		.lang-toggle button.is-active {
+			background: var(--white);
+			color: var(--ink);
+			box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+		}
+
 		.nav-cta:hover,
 		.button:hover {
 			transform: translateY(-2px);
@@ -270,7 +315,7 @@
 			position: absolute;
 			inset: 0;
 			z-index: 0;
-			background: rgba(12, 14, 15, 0.72);
+			background: linear-gradient(105deg, rgba(10, 12, 13, 0.92) 0%, rgba(12, 14, 15, 0.74) 46%, rgba(7, 95, 90, 0.42) 100%);
 		}
 
 		.hero-inner {
@@ -1396,17 +1441,23 @@
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTURIsO1Em4f6yAKWpB8cx5eXMWqr00MMtrZA&s" alt="AI Icon" style="width:100%;height:100%;object-fit:contain;display:block;">
 				</span>
 				<span class="brand-text" style="margin-left:7px;">
-					<strong>Đặng Nguyễn Quang Huy</strong>
+					<strong data-en="Dang Nguyen Quang Huy" data-vi="Đặng Nguyễn Quang Huy">Đặng Nguyễn Quang Huy</strong>
 					<span>AI Engineer</span>
 				</span>
 			</a>
 			<div class="nav-links" aria-label="Liên kết các mục">
-				<a href="#credentials">Chứng nhận</a>
-				<a href="#services">Dịch vụ</a>
-				<a href="#experience">Kinh nghiệm</a>
-				<a href="#skills">Kỹ năng</a>
+				<a href="#credentials" data-en="Proof" data-vi="Chứng nhận">Chứng nhận</a>
+				<a href="#services" data-en="Services" data-vi="Dịch vụ">Dịch vụ</a>
+				<a href="#experience" data-en="Experience" data-vi="Kinh nghiệm">Kinh nghiệm</a>
+				<a href="#skills" data-en="Skills" data-vi="Kỹ năng">Kỹ năng</a>
 			</div>
-			<a class="nav-cta" href="mailto:hdang1696@gmail.com">Liên hệ</a>
+			<div class="nav-utils">
+				<div class="lang-toggle" role="group" aria-label="Chuyển ngôn ngữ / Switch language">
+					<button type="button" data-lang="vi" aria-label="Tiếng Việt">VI</button>
+					<button type="button" data-lang="en" aria-label="English">EN</button>
+				</div>
+				<a class="nav-cta" href="mailto:hdang1696@gmail.com" data-en="Contact" data-vi="Liên hệ">Liên hệ</a>
+			</div>
 		</nav>
 	</header>
 
@@ -1426,29 +1477,29 @@
 					</div>
 				</div>
 				<span class="eyebrow">ZeusCoderBE</span>
-				<h1>Đặng Nguyễn Quang Huy</h1>
-				<p class="hero-lede">AI Engineer xây dựng các sản phẩm Generative AI sẵn sàng thương mại: hệ thống RAG, chatbot multi-agent và hạ tầng LLM mở rộng được cho lĩnh vực tài chính, pháp lý, chính phủ và nền tảng mạng xã hội.</p>
+				<h1 data-en="Dang Nguyen Quang Huy" data-vi="Đặng Nguyễn Quang Huy">Đặng Nguyễn Quang Huy</h1>
+				<p class="hero-lede" data-en="AI Engineer building commercial-ready Generative AI products, retrieval-augmented generation systems, multi-agent chatbot workflows, and scalable LLM infrastructure for finance, legal, government, and social platforms." data-vi="AI Engineer xây dựng các sản phẩm Generative AI sẵn sàng thương mại: hệ thống RAG, chatbot multi-agent và hạ tầng LLM mở rộng được cho lĩnh vực tài chính, pháp lý, chính phủ và nền tảng mạng xã hội.">AI Engineer xây dựng các sản phẩm Generative AI sẵn sàng thương mại: hệ thống RAG, chatbot multi-agent và hạ tầng LLM mở rộng được cho lĩnh vực tài chính, pháp lý, chính phủ và nền tảng mạng xã hội.</p>
 				<div class="hero-actions" aria-label="Hành động chính">
-					<a class="button button-primary" href="mailto:hdang1696@gmail.com?subject=Hop%20tac%20du%20an%20AI%20voi%20Dang%20Nguyen%20Quang%20Huy">Bắt đầu dự án -&gt;</a>
-					<a class="button button-secondary" href="https://github.com/ZeusCoderBE/" target="_blank" rel="noreferrer">Xem GitHub</a>
-					<a class="button button-secondary" href="https://huggingface.co/huyydangg/DEk21_hcmute_embedding" target="_blank" rel="noreferrer">Xem Model</a>
+					<a class="button button-primary" href="mailto:hdang1696@gmail.com?subject=Hop%20tac%20du%20an%20AI%20voi%20Dang%20Nguyen%20Quang%20Huy" data-en="Start a Project -&gt;" data-vi="Bắt đầu dự án -&gt;">Bắt đầu dự án -&gt;</a>
+					<a class="button button-secondary" href="https://github.com/ZeusCoderBE/" target="_blank" rel="noreferrer" data-en="View GitHub" data-vi="Xem GitHub">Xem GitHub</a>
+					<a class="button button-secondary" href="https://huggingface.co/huyydangg/DEk21_hcmute_embedding" target="_blank" rel="noreferrer" data-en="Open Model" data-vi="Xem Model">Xem Model</a>
 				</div>
 				<div class="hero-proof" aria-label="Điểm nổi bật">
 					<div class="proof-item">
 						<strong>2+</strong>
-						<span>Năm kinh nghiệm Generative AI</span>
+						<span data-en="Years in Generative AI" data-vi="Năm kinh nghiệm Generative AI">Năm kinh nghiệm Generative AI</span>
 					</div>
 					<div class="proof-item">
 						<strong>100K+</strong>
-						<span>Lượt tải model mỗi tháng</span>
+						<span data-en="Monthly model downloads" data-vi="Lượt tải model mỗi tháng">Lượt tải model mỗi tháng</span>
 					</div>
 					<div class="proof-item">
 						<strong>50K+</strong>
-						<span>Người dùng chatbot tài chính</span>
+						<span data-en="Finance chatbot users" data-vi="Người dùng chatbot tài chính">Người dùng chatbot tài chính</span>
 					</div>
 					<div class="proof-item">
 						<strong>93%</strong>
-						<span>Độ chính xác RAG pháp lý</span>
+						<span data-en="Legal RAG retrieval accuracy" data-vi="Độ chính xác RAG pháp lý">Độ chính xác RAG pháp lý</span>
 					</div>
 				</div>
 			</div>
@@ -1457,17 +1508,17 @@
 		<section class="intro-band" aria-labelledby="intro-title">
 			<div class="section-inner intro-grid">
 				<div>
-					<p class="section-kicker">Hồ sơ AI thương mại</p>
-					<p id="intro-title" class="intro-copy">Tôi đưa AI ở mức nghiên cứu vào hệ thống production: chatbot trả lời ổn định, pipeline RAG truy xuất chính xác và agent workflow điều phối tác vụ với tác động kinh doanh đo lường được.</p>
+					<p class="section-kicker" data-en="Commercial AI Profile" data-vi="Hồ sơ AI thương mại">Hồ sơ AI thương mại</p>
+					<p id="intro-title" class="intro-copy" data-en="I turn research-grade AI into production systems: chatbots that answer reliably, RAG pipelines that retrieve precisely, and agent workflows that route tasks with measurable business impact." data-vi="Tôi đưa AI ở mức nghiên cứu vào hệ thống production: chatbot trả lời ổn định, pipeline RAG truy xuất chính xác và agent workflow điều phối tác vụ với tác động kinh doanh đo lường được.">Tôi đưa AI ở mức nghiên cứu vào hệ thống production: chatbot trả lời ổn định, pipeline RAG truy xuất chính xác và agent workflow điều phối tác vụ với tác động kinh doanh đo lường được.</p>
 				</div>
 				<aside class="signal-panel" aria-label="Tổng quan chuyên môn">
-					<p>Junior AI Engineer II tại Mirae Asset Securities Vietnam, trực tiếp xây dựng các hệ thống AI ứng dụng — từ ứng dụng LLM, vector search, model serving, observability đến các dịch vụ backend AI.</p>
+					<p data-en="Junior AI Engineer II at Mirae Asset Securities Vietnam and hands-on builder of applied AI systems, with experience across LLM applications, vector search, model serving, observability, and backend AI services." data-vi="Junior AI Engineer II tại Mirae Asset Securities Vietnam, trực tiếp xây dựng các hệ thống AI ứng dụng — từ ứng dụng LLM, vector search, model serving, observability đến các dịch vụ backend AI.">Junior AI Engineer II tại Mirae Asset Securities Vietnam, trực tiếp xây dựng các hệ thống AI ứng dụng — từ ứng dụng LLM, vector search, model serving, observability đến các dịch vụ backend AI.</p>
 					<ul class="quick-facts">
-						<li><span>Vị trí hiện tại</span><strong><span class="fact-with-logo"><img class="fact-logo is-mirae" src="https://masvn.com/images/logo.svg" alt="Mirae Asset logo">Mirae Asset Securities Vietnam - Junior AI Engineer II</span></strong></li>
-						<li><span>Địa điểm</span><strong>TP. Hồ Chí Minh, Việt Nam</strong></li>
-						<li><span>Học vấn</span><strong><span class="fact-with-logo"><img class="fact-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_H%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_K%E1%BB%B9_Thu%E1%BA%ADt_TP_H%E1%BB%93_Ch%C3%AD_Minh.png" alt="HCMUTE logo">Kỹ thuật Dữ liệu, HCMUTE - GPA 3.61/4, <a href="https://drive.google.com/file/d/1RmwtTL0iStBMDRiKAddt5sdBVZTDzj-6/view" target="_blank" rel="noreferrer">Top 3 khóa</a></span></strong></li>
-						<li><span>Cộng đồng</span><strong>Đồng sáng lập Code4Life-AI, sáng tạo nội dung về kỹ thuật GenAI thực chiến</strong></li>
-						<li><span>Liên hệ</span><strong>+84 0395 049 120 | hdang1696@gmail.com</strong></li>
+						<li><span data-en="Current Role" data-vi="Vị trí hiện tại">Vị trí hiện tại</span><strong><span class="fact-with-logo"><img class="fact-logo is-mirae" src="https://masvn.com/images/logo.svg" alt="Mirae Asset logo">Mirae Asset Securities Vietnam - Junior AI Engineer II</span></strong></li>
+						<li><span data-en="Location" data-vi="Địa điểm">Địa điểm</span><strong data-en="Ho Chi Minh City, Vietnam" data-vi="TP. Hồ Chí Minh, Việt Nam">TP. Hồ Chí Minh, Việt Nam</strong></li>
+						<li><span data-en="Education" data-vi="Học vấn">Học vấn</span><strong><span class="fact-with-logo"><img class="fact-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_H%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_K%E1%BB%B9_Thu%E1%BA%ADt_TP_H%E1%BB%93_Ch%C3%AD_Minh.png" alt="HCMUTE logo"><span data-en="Data Engineering, HCMUTE - GPA 3.61/4, " data-vi="Kỹ thuật Dữ liệu, HCMUTE - GPA 3.61/4, ">Kỹ thuật Dữ liệu, HCMUTE - GPA 3.61/4, </span><a href="https://drive.google.com/file/d/1RmwtTL0iStBMDRiKAddt5sdBVZTDzj-6/view" target="_blank" rel="noreferrer" data-en="Top 3 in cohort" data-vi="Top 3 khóa">Top 3 khóa</a></span></strong></li>
+						<li><span data-en="Community" data-vi="Cộng đồng">Cộng đồng</span><strong data-en="Co-Founder of Code4Life-AI and creator around practical GenAI engineering" data-vi="Đồng sáng lập Code4Life-AI, sáng tạo nội dung về kỹ thuật GenAI thực chiến">Đồng sáng lập Code4Life-AI, sáng tạo nội dung về kỹ thuật GenAI thực chiến</strong></li>
+						<li><span data-en="Contact" data-vi="Liên hệ">Liên hệ</span><strong>+84 0395 049 120 | hdang1696@gmail.com</strong></li>
 					</ul>
 				</aside>
 			</div>
@@ -1477,34 +1528,34 @@
 			<div class="section-inner">
 				<div class="section-heading">
 					<div>
-						<p class="section-kicker">Bằng chứng đã xác minh</p>
-						<h2 id="credentials-title">Những minh chứng tạo nên độ tin cậy của hồ sơ.</h2>
+						<p class="section-kicker" data-en="Verified Proof" data-vi="Bằng chứng đã xác minh">Bằng chứng đã xác minh</p>
+						<h2 id="credentials-title" data-en="Signals that make the profile credible." data-vi="Những minh chứng tạo nên độ tin cậy của hồ sơ.">Những minh chứng tạo nên độ tin cậy của hồ sơ.</h2>
 					</div>
-					<p>Các liên kết công khai và minh chứng học thuật củng cố hồ sơ: năng lực tiếng Anh, sự nhất quán, thành tích học tập và một model AI mã nguồn mở có lượng sử dụng thực tế.</p>
+					<p data-en="Public links and academic evidence that support the commercial story: English ability, consistency, academic excellence, and an open-source AI model with real usage." data-vi="Các liên kết công khai và minh chứng học thuật củng cố hồ sơ: năng lực tiếng Anh, sự nhất quán, thành tích học tập và một model AI mã nguồn mở có lượng sử dụng thực tế.">Các liên kết công khai và minh chứng học thuật củng cố hồ sơ: năng lực tiếng Anh, sự nhất quán, thành tích học tập và một model AI mã nguồn mở có lượng sử dụng thực tế.</p>
 				</div>
 				<div class="credential-grid">
 					<article class="credential-link">
-						<div class="credential-top"><span>Tiếng Anh</span><img class="credential-logo" src="https://www.google.com/s2/favicons?domain=iigvietnam.com&amp;sz=128" alt="IIG Vietnam logo"></div>
+						<div class="credential-top"><span data-en="English" data-vi="Tiếng Anh">Tiếng Anh</span><img class="credential-logo" src="https://www.google.com/s2/favicons?domain=iigvietnam.com&amp;sz=128" alt="IIG Vietnam logo"></div>
 						<img class="credential-proof-img" src="https://drive.google.com/thumbnail?id=12N0pdOt8EW9tlgbuelCP_tPqmiEaRyjS&amp;sz=w1000" alt="Ảnh chứng chỉ TOEIC 605">
-						<div><strong>Chứng chỉ TOEIC 605</strong><p>Nền tảng giao tiếp tiếng Anh phục vụ hợp tác kỹ thuật AI quốc tế.</p></div>
-						<a class="credential-action" href="https://drive.google.com/file/u/1/d/12N0pdOt8EW9tlgbuelCP_tPqmiEaRyjS/view?usp=sharing" target="_blank" rel="noreferrer">Xem bằng chứng</a>
+						<div><strong data-en="TOEIC 605 Certificate" data-vi="Chứng chỉ TOEIC 605">Chứng chỉ TOEIC 605</strong><p data-en="Documented English communication foundation for international AI engineering collaboration." data-vi="Nền tảng giao tiếp tiếng Anh phục vụ hợp tác kỹ thuật AI quốc tế.">Nền tảng giao tiếp tiếng Anh phục vụ hợp tác kỹ thuật AI quốc tế.</p></div>
+						<a class="credential-action" href="https://drive.google.com/file/u/1/d/12N0pdOt8EW9tlgbuelCP_tPqmiEaRyjS/view?usp=sharing" target="_blank" rel="noreferrer" data-en="Open full proof" data-vi="Xem bằng chứng">Xem bằng chứng</a>
 					</article>
 					<article class="credential-link">
-						<div class="credential-top"><span>Học bổng</span><img class="credential-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_H%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_K%E1%BB%B9_Thu%E1%BA%ADt_TP_H%E1%BB%93_Ch%C3%AD_Minh.png" alt="HCMUTE logo"></div>
+						<div class="credential-top"><span data-en="Scholarship" data-vi="Học bổng">Học bổng</span><img class="credential-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_H%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_K%E1%BB%B9_Thu%E1%BA%ADt_TP_H%E1%BB%93_Ch%C3%AD_Minh.png" alt="HCMUTE logo"></div>
 						<img class="credential-proof-img" src="https://drive.google.com/thumbnail?id=143oOdNctcVgnwStsFQ3o1SpBLol0iswm&amp;sz=w1000" alt="Ảnh minh chứng học bổng HCMUTE">
-						<div><strong>4 lần học bổng khuyến khích</strong><p>Ghi nhận thành tích học tập qua nhiều học kỳ từ 2022 đến 2025.</p></div>
-						<a class="credential-action" href="https://drive.google.com/file/d/143oOdNctcVgnwStsFQ3o1SpBLol0iswm/view" target="_blank" rel="noreferrer">Xem bằng chứng</a>
+						<div><strong data-en="4 Merit Scholarships" data-vi="4 lần học bổng khuyến khích">4 lần học bổng khuyến khích</strong><p data-en="Recognized academic performance across multiple semesters from 2022 to 2025." data-vi="Ghi nhận thành tích học tập qua nhiều học kỳ từ 2022 đến 2025.">Ghi nhận thành tích học tập qua nhiều học kỳ từ 2022 đến 2025.</p></div>
+						<a class="credential-action" href="https://drive.google.com/file/d/143oOdNctcVgnwStsFQ3o1SpBLol0iswm/view" target="_blank" rel="noreferrer" data-en="Open full proof" data-vi="Xem bằng chứng">Xem bằng chứng</a>
 					</article>
 					<article class="credential-link">
-						<div class="credential-top"><span>Học thuật</span><img class="credential-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_H%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_K%E1%BB%B9_Thu%E1%BA%ADt_TP_H%E1%BB%93_Ch%C3%AD_Minh.png" alt="HCMUTE logo"></div>
+						<div class="credential-top"><span data-en="Academic" data-vi="Học thuật">Học thuật</span><img class="credential-logo" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_H%E1%BB%8Dc_C%C3%B4ng_ngh%E1%BB%87_K%E1%BB%B9_Thu%E1%BA%ADt_TP_H%E1%BB%93_Ch%C3%AD_Minh.png" alt="HCMUTE logo"></div>
 						<img class="credential-proof-img" src="https://drive.google.com/thumbnail?id=1RmwtTL0iStBMDRiKAddt5sdBVZTDzj-6&amp;sz=w1000" alt="Ảnh minh chứng Top 3 GPA">
-						<div><strong>Top 3 GPA ngành Kỹ thuật Dữ liệu</strong><p>Tốt nghiệp HCMUTE với GPA 3.61/4, thuộc nhóm sinh viên xuất sắc nhất khóa.</p></div>
-						<a class="credential-action" href="https://drive.google.com/file/d/1RmwtTL0iStBMDRiKAddt5sdBVZTDzj-6/view" target="_blank" rel="noreferrer">Xem bằng chứng</a>
+						<div><strong data-en="Top 3 GPA in Data Engineering" data-vi="Top 3 GPA ngành Kỹ thuật Dữ liệu">Top 3 GPA ngành Kỹ thuật Dữ liệu</strong><p data-en="Graduated from HCMUTE with GPA 3.61/4 and ranked among the strongest students in the cohort." data-vi="Tốt nghiệp HCMUTE với GPA 3.61/4, thuộc nhóm sinh viên xuất sắc nhất khóa.">Tốt nghiệp HCMUTE với GPA 3.61/4, thuộc nhóm sinh viên xuất sắc nhất khóa.</p></div>
+						<a class="credential-action" href="https://drive.google.com/file/d/1RmwtTL0iStBMDRiKAddt5sdBVZTDzj-6/view" target="_blank" rel="noreferrer" data-en="Open full proof" data-vi="Xem bằng chứng">Xem bằng chứng</a>
 					</article>
 					<a class="credential-link" href="https://huggingface.co/huyydangg/DEk21_hcmute_embedding" target="_blank" rel="noreferrer">
 						<div class="credential-top"><span>Open Model</span><img class="credential-logo" src="https://cdn.simpleicons.org/huggingface/FFD21E.svg" alt="Hugging Face logo"></div>
-						<div><strong>DEk21 HCMUTE Embedding</strong><p>Model embedding chuyên ngành đã công bố, đạt 100K+ lượt tải mỗi tháng trên Hugging Face.</p></div>
-						<em>Xem model</em>
+						<div><strong>DEk21 HCMUTE Embedding</strong><p data-en="Published domain-specific embedding model with 100K+ monthly downloads on Hugging Face." data-vi="Model embedding chuyên ngành đã công bố, đạt 100K+ lượt tải mỗi tháng trên Hugging Face.">Model embedding chuyên ngành đã công bố, đạt 100K+ lượt tải mỗi tháng trên Hugging Face.</p></div>
+						<em data-en="Open model" data-vi="Xem model">Xem model</em>
 					</a>
 				</div>
 			</div>
@@ -1514,43 +1565,43 @@
 			<div class="section-inner">
 				<div class="section-heading">
 					<div>
-						<p class="section-kicker">Tôi xây dựng gì</p>
-						<h2 id="services-title">Hệ thống AI sẵn sàng cho người dùng thật và chi phí thật.</h2>
+						<p class="section-kicker" data-en="What I Build" data-vi="Tôi xây dựng gì">Tôi xây dựng gì</p>
+						<h2 id="services-title" data-en="AI systems ready for real users and real costs." data-vi="Hệ thống AI sẵn sàng cho người dùng thật và chi phí thật.">Hệ thống AI sẵn sàng cho người dùng thật và chi phí thật.</h2>
 					</div>
-					<p>Công việc của tôi hướng đến kết quả đo lường được: giảm độ trễ, giảm chi phí token, tăng độ chính xác truy xuất, observability tốt hơn và tích hợp gọn gàng với hệ thống nghiệp vụ.</p>
+					<p data-en="My work focuses on measurable outcomes: lower latency, lower token cost, better retrieval accuracy, stronger observability, and cleaner integration with business systems." data-vi="Công việc của tôi hướng đến kết quả đo lường được: giảm độ trễ, giảm chi phí token, tăng độ chính xác truy xuất, observability tốt hơn và tích hợp gọn gàng với hệ thống nghiệp vụ.">Công việc của tôi hướng đến kết quả đo lường được: giảm độ trễ, giảm chi phí token, tăng độ chính xác truy xuất, observability tốt hơn và tích hợp gọn gàng với hệ thống nghiệp vụ.</p>
 				</div>
 				<div class="card-grid">
 					<article class="service-card">
 						<div>
 							<span class="service-number">01</span>
-							<h3>Hệ thống RAG</h3>
-							<p>Hybrid retrieval, reranking, query routing, fine-tune embedding, indexing dense/sparse/ColBERT và sinh câu trả lời có dẫn chứng.</p>
+							<h3 data-en="RAG Systems" data-vi="Hệ thống RAG">Hệ thống RAG</h3>
+							<p data-en="Hybrid retrieval, reranking, query routing, embedding fine-tuning, dense/sparse/ColBERT indexing, and grounded answer generation." data-vi="Hybrid retrieval, reranking, query routing, fine-tune embedding, indexing dense/sparse/ColBERT và sinh câu trả lời có dẫn chứng.">Hybrid retrieval, reranking, query routing, fine-tune embedding, indexing dense/sparse/ColBERT và sinh câu trả lời có dẫn chứng.</p>
 						</div>
-						<strong>Phù hợp cho pháp lý, tài chính, tri thức nội bộ và chăm sóc khách hàng.</strong>
+						<strong data-en="Best for legal, finance, internal knowledge, and customer support." data-vi="Phù hợp cho pháp lý, tài chính, tri thức nội bộ và chăm sóc khách hàng.">Phù hợp cho pháp lý, tài chính, tri thức nội bộ và chăm sóc khách hàng.</strong>
 					</article>
 					<article class="service-card">
 						<div>
 							<span class="service-number">02</span>
-							<h3>Chatbot Multi-Agent</h3>
-							<p>Agent router, agent chuyên ngành, prompt tool-calling, bộ nhớ hội thoại và luồng phản hồi có cấu trúc cho các tình huống hỗ trợ phức tạp.</p>
+							<h3 data-en="Multi-Agent Chatbots" data-vi="Chatbot Multi-Agent">Chatbot Multi-Agent</h3>
+							<p data-en="Agent routers, domain-specific agents, tool-calling prompts, conversation memory, and structured response flows for complex support scenarios." data-vi="Agent router, agent chuyên ngành, prompt tool-calling, bộ nhớ hội thoại và luồng phản hồi có cấu trúc cho các tình huống hỗ trợ phức tạp.">Agent router, agent chuyên ngành, prompt tool-calling, bộ nhớ hội thoại và luồng phản hồi có cấu trúc cho các tình huống hỗ trợ phức tạp.</p>
 						</div>
-						<strong>Thiết kế cho workflow mở rộng với nhiều ý định nghiệp vụ.</strong>
+						<strong data-en="Built for scalable workflows with many business intents." data-vi="Thiết kế cho workflow mở rộng với nhiều ý định nghiệp vụ.">Thiết kế cho workflow mở rộng với nhiều ý định nghiệp vụ.</strong>
 					</article>
 					<article class="service-card">
 						<div>
 							<span class="service-number">03</span>
-							<h3>LLMOps & Giám sát</h3>
-							<p>Đánh giá bằng Langfuse, debug prompt, trace inference, kiểm thử mock LLM, hỗ trợ stress-test và phân tích hiệu năng từ UAT đến production.</p>
+							<h3 data-en="LLMOps and Monitoring" data-vi="LLMOps & Giám sát">LLMOps & Giám sát</h3>
+							<p data-en="Langfuse evaluation, prompt debugging, inference tracing, mock LLM testing, stress-test support, and performance analysis from UAT to production." data-vi="Đánh giá bằng Langfuse, debug prompt, trace inference, kiểm thử mock LLM, hỗ trợ stress-test và phân tích hiệu năng từ UAT đến production.">Đánh giá bằng Langfuse, debug prompt, trace inference, kiểm thử mock LLM, hỗ trợ stress-test và phân tích hiệu năng từ UAT đến production.</p>
 						</div>
-						<strong>Giúp hành vi của AI luôn đo lường và bảo trì được.</strong>
+						<strong data-en="Designed to keep AI behavior measurable and maintainable." data-vi="Giúp hành vi của AI luôn đo lường và bảo trì được.">Giúp hành vi của AI luôn đo lường và bảo trì được.</strong>
 					</article>
 					<article class="service-card">
 						<div>
 							<span class="service-number">04</span>
-							<h3>Backend AI & Model Serving</h3>
-							<p>Dịch vụ FastAPI, streaming WebSocket, messaging bất đồng bộ qua Kafka, triển khai Docker, serving vLLM, workflow CUDA và API vector database.</p>
+							<h3 data-en="AI Backend and Model Serving" data-vi="Backend AI & Model Serving">Backend AI & Model Serving</h3>
+							<p data-en="FastAPI services, WebSocket streaming, Kafka-based async messaging, Docker deployment, vLLM serving, CUDA workflows, and vector database APIs." data-vi="Dịch vụ FastAPI, streaming WebSocket, messaging bất đồng bộ qua Kafka, triển khai Docker, serving vLLM, workflow CUDA và API vector database.">Dịch vụ FastAPI, streaming WebSocket, messaging bất đồng bộ qua Kafka, triển khai Docker, serving vLLM, workflow CUDA và API vector database.</p>
 						</div>
-						<strong>Hạ tầng thực chiến cho sản phẩm GenAI cấp production.</strong>
+						<strong data-en="Practical infrastructure for production-grade GenAI products." data-vi="Hạ tầng thực chiến cho sản phẩm GenAI cấp production.">Hạ tầng thực chiến cho sản phẩm GenAI cấp production.</strong>
 					</article>
 				</div>
 			</div>
@@ -1560,45 +1611,45 @@
 			<div class="section-inner">
 				<div class="section-heading">
 					<div>
-						<p class="section-kicker">Kinh nghiệm</p>
-						<h2 id="experience-title">Hành trình thực chiến cùng AI production.</h2>
+						<p class="section-kicker" data-en="Experience" data-vi="Kinh nghiệm">Kinh nghiệm</p>
+						<h2 id="experience-title" data-en="A practical path through production AI." data-vi="Hành trình thực chiến cùng AI production.">Hành trình thực chiến cùng AI production.</h2>
 					</div>
-					<p>Mỗi vị trí củng cố một lớp khác nhau của GenAI stack: chất lượng retrieval, model serving, điều phối agent, streaming API và kỷ luật triển khai.</p>
+					<p data-en="Each role strengthened a different layer of the GenAI stack: retrieval quality, model serving, agent orchestration, streaming APIs, and deployment discipline." data-vi="Mỗi vị trí củng cố một lớp khác nhau của GenAI stack: chất lượng retrieval, model serving, điều phối agent, streaming API và kỷ luật triển khai.">Mỗi vị trí củng cố một lớp khác nhau của GenAI stack: chất lượng retrieval, model serving, điều phối agent, streaming API và kỷ luật triển khai.</p>
 				</div>
 				<div class="timeline">
 					<article class="timeline-item">
-						<div class="timeline-date">12/2025 - Hiện tại</div>
+						<div class="timeline-date" data-en="Dec 2025 - Present" data-vi="12/2025 - Hiện tại">12/2025 - Hiện tại</div>
 						<div class="timeline-content">
 							<div class="role-heading"><a class="role-logo-link is-mirae" href="https://ybox.vn/tuyen-dung/online-cong-ty-tai-chinh-chung-khoan-mirae-asset-finance-tuyen-dung-cong-tac-vien-marketing-part-time-full-time-2023-64ec1486ee06bb6c9398eb33" target="_blank" rel="noreferrer" aria-label="Mở nguồn Mirae Asset"><img src="https://masvn.com/images/logo.svg" alt="Mirae Asset logo"></a><h3>Mirae Asset Securities Vietnam | Junior AI Engineer II</h3></div>
-							<p>Tham gia xây dựng hệ thống chatbot tài chính và chăm sóc khách hàng cho môi trường production lưu lượng cao.</p>
+							<p data-en="Contributing to finance and customer service chatbot systems for high-traffic production environments." data-vi="Tham gia xây dựng hệ thống chatbot tài chính và chăm sóc khách hàng cho môi trường production lưu lượng cao.">Tham gia xây dựng hệ thống chatbot tài chính và chăm sóc khách hàng cho môi trường production lưu lượng cao.</p>
 							<ul>
-								<li>Giảm 70-80% chi phí stress-test nhờ mock LLM và mock vector database.</li>
-								<li>Cải thiện độ nhất quán phản hồi và lựa chọn tool thông qua debug prompt multi-agent.</li>
-								<li>Tối ưu token đầu vào của tool cùng đội backend, giảm 20% chi phí vận hành so với lúc triển khai ban đầu.</li>
+								<li data-en="Reduced stress-testing cost by 70-80% with mock LLMs and mock vector databases." data-vi="Giảm 70-80% chi phí stress-test nhờ mock LLM và mock vector database.">Giảm 70-80% chi phí stress-test nhờ mock LLM và mock vector database.</li>
+								<li data-en="Improved response consistency and tool selection through multi-agent prompt debugging." data-vi="Cải thiện độ nhất quán phản hồi và lựa chọn tool thông qua debug prompt multi-agent.">Cải thiện độ nhất quán phản hồi và lựa chọn tool thông qua debug prompt multi-agent.</li>
+								<li data-en="Optimized tool input tokens with backend teams, reducing operational cost by 20% from the initial deployment." data-vi="Tối ưu token đầu vào của tool cùng đội backend, giảm 20% chi phí vận hành so với lúc triển khai ban đầu.">Tối ưu token đầu vào của tool cùng đội backend, giảm 20% chi phí vận hành so với lúc triển khai ban đầu.</li>
 							</ul>
 						</div>
 					</article>
 					<article class="timeline-item">
-						<div class="timeline-date">02/2025 - 11/2025</div>
+						<div class="timeline-date" data-en="Feb 2025 - Nov 2025" data-vi="02/2025 - 11/2025">02/2025 - 11/2025</div>
 						<div class="timeline-content">
 							<div class="role-heading"><a class="role-logo-link is-wide" href="https://www.facebook.com/Viettelhightech/photos/1050183970479002/" target="_blank" rel="noreferrer" aria-label="Mở nguồn Viettel High Tech"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEUWCv4OYZl9oL68tGUksJ8BEDYfCO63WPEg&amp;s" alt="Viettel High Tech logo"></a><h3>Viettel High Tech - Viettel Group | AI Engineer</h3></div>
-							<p>Phát triển AI tư vấn pháp lý, workflow model serving và các module AI cho hệ thống nền tảng mạng xã hội quy mô lớn.</p>
+							<p data-en="Developed legal consulting AI, model serving workflows, and AI-powered modules for large-scale social platform systems." data-vi="Phát triển AI tư vấn pháp lý, workflow model serving và các module AI cho hệ thống nền tảng mạng xã hội quy mô lớn.">Phát triển AI tư vấn pháp lý, workflow model serving và các module AI cho hệ thống nền tảng mạng xã hội quy mô lớn.</p>
 							<ul>
-								<li>Giảm 35% độ trễ truy vấn vector search nhờ tối ưu retrieval API và caching.</li>
-								<li>Serving model Qwen-32B và Qwen3-VL trên GPU A100 80GB bằng vLLM để sinh dữ liệu và trích xuất hình ảnh.</li>
-								<li>Xây dựng module Agentic RAG memory, nâng độ chính xác hiểu ngôn ngữ lên 89% và 87% trên các hệ chatbot.</li>
+								<li data-en="Reduced vector search query latency by 35% through retrieval API and caching optimization." data-vi="Giảm 35% độ trễ truy vấn vector search nhờ tối ưu retrieval API và caching.">Giảm 35% độ trễ truy vấn vector search nhờ tối ưu retrieval API và caching.</li>
+								<li data-en="Served Qwen-32B and Qwen3-VL models on A100 80GB GPUs with vLLM for synthetic data and image extraction." data-vi="Serving model Qwen-32B và Qwen3-VL trên GPU A100 80GB bằng vLLM để sinh dữ liệu và trích xuất hình ảnh.">Serving model Qwen-32B và Qwen3-VL trên GPU A100 80GB bằng vLLM để sinh dữ liệu và trích xuất hình ảnh.</li>
+								<li data-en="Built Agentic RAG memory modules that improved language understanding accuracy to 89% and 87% across chatbot systems." data-vi="Xây dựng module Agentic RAG memory, nâng độ chính xác hiểu ngôn ngữ lên 89% và 87% trên các hệ chatbot.">Xây dựng module Agentic RAG memory, nâng độ chính xác hiểu ngôn ngữ lên 89% và 87% trên các hệ chatbot.</li>
 							</ul>
 						</div>
 					</article>
 					<article class="timeline-item">
-						<div class="timeline-date">03/2024 - 12/2024</div>
+						<div class="timeline-date" data-en="Mar 2024 - Dec 2024" data-vi="03/2024 - 12/2024">03/2024 - 12/2024</div>
 						<div class="timeline-content">
 							<div class="role-heading"><a class="role-logo-link is-vna" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWGBBfkJuhnliJK-b4EeUVGvRloaFwZcKtg&amp;s" target="_blank" rel="noreferrer" aria-label="Mở logo VNA Group"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWGBBfkJuhnliJK-b4EeUVGvRloaFwZcKtg&amp;s" alt="VNA Group logo"></a><h3>VNA Group | AI Engineer</h3></div>
-							<p>Xây dựng hạ tầng chatbot pháp lý và chính trị, phục vụ 5.000+ truy vấn mỗi ngày và tăng tốc tra cứu thông tin.</p>
+							<p data-en="Built political and legal chatbot infrastructure supporting 5,000+ daily queries and faster information access." data-vi="Xây dựng hạ tầng chatbot pháp lý và chính trị, phục vụ 5.000+ truy vấn mỗi ngày và tăng tốc tra cứu thông tin.">Xây dựng hạ tầng chatbot pháp lý và chính trị, phục vụ 5.000+ truy vấn mỗi ngày và tăng tốc tra cứu thông tin.</p>
 							<ul>
-								<li>Tự động hóa pipeline Airflow thu thập và xử lý 100 bài viết pháp lý, chính trị mỗi ngày.</li>
-								<li>Nâng độ chính xác hệ RAG từ 75% lên 85% với embedding dense, sparse và ColBERT trên Qdrant.</li>
-								<li>Fine-tune model BGE-m3 và BERT để tăng độ chính xác retrieval và giảm 25% chi phí API bên ngoài.</li>
+								<li data-en="Automated Airflow pipelines to collect and process 100 legal and political articles daily." data-vi="Tự động hóa pipeline Airflow thu thập và xử lý 100 bài viết pháp lý, chính trị mỗi ngày.">Tự động hóa pipeline Airflow thu thập và xử lý 100 bài viết pháp lý, chính trị mỗi ngày.</li>
+								<li data-en="Improved RAG system accuracy from 75% to 85% with dense, sparse, and ColBERT embeddings in Qdrant." data-vi="Nâng độ chính xác hệ RAG từ 75% lên 85% với embedding dense, sparse và ColBERT trên Qdrant.">Nâng độ chính xác hệ RAG từ 75% lên 85% với embedding dense, sparse và ColBERT trên Qdrant.</li>
+								<li data-en="Fine-tuned BGE-m3 and BERT models to improve retrieval precision and reduce external API cost by 25%." data-vi="Fine-tune model BGE-m3 và BERT để tăng độ chính xác retrieval và giảm 25% chi phí API bên ngoài.">Fine-tune model BGE-m3 và BERT để tăng độ chính xác retrieval và giảm 25% chi phí API bên ngoài.</li>
 							</ul>
 						</div>
 					</article>
@@ -1610,28 +1661,28 @@
 			<div class="section-inner skills-layout">
 				<aside class="skills-note">
 					<p class="section-kicker">Technical Stack</p>
-					<h2 id="skills-title">Phù hợp cho đội ngũ sản phẩm AI hiện đại.</h2>
-					<p>Một stack cân bằng giữa thử nghiệm model, kỹ thuật ứng dụng, hạ tầng retrieval, triển khai, observability và hỗ trợ production.</p>
+					<h2 id="skills-title" data-en="Built for modern AI product teams." data-vi="Phù hợp cho đội ngũ sản phẩm AI hiện đại.">Phù hợp cho đội ngũ sản phẩm AI hiện đại.</h2>
+					<p data-en="A balanced stack across model experimentation, application engineering, retrieval infrastructure, deployment, observability, and production support." data-vi="Một stack cân bằng giữa thử nghiệm model, kỹ thuật ứng dụng, hạ tầng retrieval, triển khai, observability và hỗ trợ production.">Một stack cân bằng giữa thử nghiệm model, kỹ thuật ứng dụng, hạ tầng retrieval, triển khai, observability và hỗ trợ production.</p>
 				</aside>
 				<div class="skill-groups" aria-label="Kỹ năng kỹ thuật">
 					<div class="skill-group">
-						<h3>Lập trình & API</h3>
+						<h3 data-en="Programming and APIs" data-vi="Lập trình & API">Lập trình & API</h3>
 						<div class="skill-list"><span class="tag"><img src="https://cdn.simpleicons.org/python/3776AB.svg" alt="">Python</span><span class="tag"><img src="https://cdn.simpleicons.org/sqlite/003B57.svg" alt="">SQL</span><span class="tag"><img src="https://cdn.simpleicons.org/fastapi/009688.svg" alt="">FastAPI</span><span class="tag">RESTful API</span><span class="tag"><img src="https://cdn.simpleicons.org/socketdotio/010101.svg" alt="">WebSocket</span><span class="tag"><img src="https://cdn.simpleicons.org/postman/FF6C37.svg" alt="">Postman</span></div>
 					</div>
 					<div class="skill-group">
-						<h3>Machine Learning & LLMs</h3>
+						<h3 data-en="Machine Learning and LLMs" data-vi="Machine Learning &amp; LLMs">Machine Learning & LLMs</h3>
 						<div class="skill-list"><span class="tag"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C.svg" alt="">PyTorch</span><span class="tag"><img src="https://cdn.simpleicons.org/huggingface/FFD21E.svg" alt="">Transformers</span><span class="tag"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E.svg" alt="">Scikit-Learn</span><span class="tag"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00.svg" alt="">TensorFlow</span><span class="tag"><img src="https://www.google.com/s2/favicons?domain=openai.com&amp;sz=64" alt="">OpenAI</span><span class="tag"><img src="https://cdn.simpleicons.org/googlegemini/8E75B2.svg" alt="">Gemini</span><span class="tag"><img src="https://www.google.com/s2/favicons?domain=qwenlm.github.io&amp;sz=64" alt="">Qwen</span><span class="tag"><img src="https://cdn.simpleicons.org/deepseek/4D6BFF.svg" alt="">DeepSeek</span></div>
 					</div>
 					<div class="skill-group">
-						<h3>Framework Generative AI</h3>
+						<h3 data-en="Generative AI Frameworks" data-vi="Framework Generative AI">Framework Generative AI</h3>
 						<div class="skill-list"><span class="tag"><img src="https://cdn.simpleicons.org/langchain/1C3C3C.svg" alt="">LangChain</span><span class="tag"><img src="https://cdn.simpleicons.org/langgraph/1C3C3C.svg" alt="">LangGraph</span><span class="tag"><img src="https://www.google.com/s2/favicons?domain=langfuse.com&amp;sz=64" alt="">Langfuse</span><span class="tag"><span class="tag-badge is-rag">RAG</span>RAG</span><span class="tag"><span class="tag-badge is-lora">Lo</span>LoRA</span><span class="tag"><span class="tag-badge is-lora">QL</span>QLoRA</span><span class="tag"><span class="tag-badge is-prompt">PE</span>Prompt Engineering</span></div>
 					</div>
 					<div class="skill-group">
-						<h3>Hạ tầng Retrieval & Dữ liệu</h3>
+						<h3 data-en="Retrieval and Data Infrastructure" data-vi="Hạ tầng Retrieval &amp; Dữ liệu">Hạ tầng Retrieval & Dữ liệu</h3>
 						<div class="skill-list"><span class="tag"><img src="https://cdn.simpleicons.org/qdrant/DC244C.svg" alt="">Qdrant</span><span class="tag"><img src="https://cdn.simpleicons.org/elasticsearch/005571.svg" alt="">Elasticsearch</span><span class="tag">Pinecone</span><span class="tag"><img src="https://cdn.simpleicons.org/mysql/4479A1.svg" alt="">MySQL</span><span class="tag"><img src="https://cdn.simpleicons.org/minio/C72E49.svg" alt="">MinIO</span><span class="tag"><img src="https://cdn.simpleicons.org/apachekafka/231F20.svg" alt="">Kafka</span><span class="tag"><img src="https://cdn.simpleicons.org/apacheairflow/017CEE.svg" alt="">Apache Airflow</span></div>
 					</div>
 					<div class="skill-group">
-						<h3>Serving & Vận hành</h3>
+						<h3 data-en="Serving and Operations" data-vi="Serving &amp; Vận hành">Serving & Vận hành</h3>
 						<div class="skill-list"><span class="tag"><img src="https://cdn.simpleicons.org/docker/2496ED.svg" alt="">Docker</span><span class="tag"><img src="https://cdn.simpleicons.org/kubernetes/326CE5.svg" alt="">Kubernetes</span><span class="tag"><img src="https://www.google.com/s2/favicons?domain=vllm.ai&amp;sz=64" alt="">vLLM</span><span class="tag"><img src="https://cdn.simpleicons.org/linux/FCC624.svg" alt="">Linux</span><span class="tag"><img src="https://cdn.simpleicons.org/nvidia/76B900.svg" alt="">CUDA</span><span class="tag"><img src="https://cdn.simpleicons.org/grafana/F46800.svg" alt="">Grafana</span><span class="tag"><img src="https://cdn.simpleicons.org/git/F05032.svg" alt="">Git</span><span class="tag"><img src="https://cdn.simpleicons.org/github/181717.svg" alt="">GitHub</span><span class="tag"><img src="https://cdn.simpleicons.org/gitlab/FC6D26.svg" alt="">GitLab</span></div>
 					</div>
 				</div>
@@ -1644,26 +1695,26 @@
 					<img src="https://drive.google.com/thumbnail?id=1txObFmI6tX9k4Uw25n7bLZsDT_yoPFNx&amp;sz=w1200" alt="Dang Nguyen Quang Huy profile portrait">
 				</div>
 				<div>
-					<p class="section-kicker">Thương hiệu cá nhân</p>
+					<p class="section-kicker" data-en="Public Brand" data-vi="Thương hiệu cá nhân">Thương hiệu cá nhân</p>
 					<div class="section-heading" style="display: block; margin-bottom: 28px;">
-						<h2 id="brand-title">Làm kỹ thuật công khai, xây dựng bằng uy tín.</h2>
+						<h2 id="brand-title" data-en="Engineering in public, building with credibility." data-vi="Làm kỹ thuật công khai, xây dựng bằng uy tín.">Làm kỹ thuật công khai, xây dựng bằng uy tín.</h2>
 					</div>
 					<div class="brand-list">
 						<a class="brand-link" href="https://github.com/ZeusCoderBE/" target="_blank" rel="noreferrer">
 							<span>GitHub</span>
-							<div><strong>ZeusCoderBE</strong><p>Dự án mã nguồn mở và repository AI ứng dụng về NLP, RAG, hệ gợi ý và kỹ thuật chatbot.</p></div>
+							<div><strong>ZeusCoderBE</strong><p data-en="Open-source work, applied AI repositories, and profile projects around NLP, RAG, recommendation systems, and chatbot engineering." data-vi="Dự án mã nguồn mở và repository AI ứng dụng về NLP, RAG, hệ gợi ý và kỹ thuật chatbot.">Dự án mã nguồn mở và repository AI ứng dụng về NLP, RAG, hệ gợi ý và kỹ thuật chatbot.</p></div>
 						</a>
 						<a class="brand-link" href="https://huggingface.co/huyydangg/DEk21_hcmute_embedding" target="_blank" rel="noreferrer">
 							<span><img src="https://cdn.simpleicons.org/huggingface/FFD21E.svg" alt="">Model</span>
-							<div><strong>DEk21_hcmute_embedding</strong><p>Model embedding chuyên ngành công bố trên Hugging Face với 100K+ lượt tải mỗi tháng.</p></div>
+							<div><strong>DEk21_hcmute_embedding</strong><p data-en="A domain-specific embedding model published on Hugging Face with 100K+ monthly downloads." data-vi="Model embedding chuyên ngành công bố trên Hugging Face với 100K+ lượt tải mỗi tháng.">Model embedding chuyên ngành công bố trên Hugging Face với 100K+ lượt tải mỗi tháng.</p></div>
 						</a>
 						<a class="brand-link" href="https://www.tiktok.com/@anhkysuai" target="_blank" rel="noreferrer">
-							<span>Sáng tạo nội dung</span>
-							<div><strong>Anh Kỹ Sư AI</strong><p>Nội dung GenAI thực chiến, bài học kỹ thuật và chia sẻ kiến thức cho cộng đồng.</p></div>
+							<span data-en="Creator" data-vi="Sáng tạo nội dung">Sáng tạo nội dung</span>
+							<div><strong>Anh Kỹ Sư AI</strong><p data-en="Practical GenAI content, engineering lessons, and community knowledge sharing." data-vi="Nội dung GenAI thực chiến, bài học kỹ thuật và chia sẻ kiến thức cho cộng đồng.">Nội dung GenAI thực chiến, bài học kỹ thuật và chia sẻ kiến thức cho cộng đồng.</p></div>
 						</a>
 						<a class="brand-link" href="https://www.tiktok.com/@huylamai.code4life.ai" target="_blank" rel="noreferrer">
-							<span>Đồng sáng lập</span>
-							<div><strong>Code4Life-AI</strong><p>Kênh sáng tạo và fanpage tập trung vào kỹ thuật AI, lập trình và giáo dục công nghệ ứng dụng.</p></div>
+							<span data-en="Co-Founder" data-vi="Đồng sáng lập">Đồng sáng lập</span>
+							<div><strong>Code4Life-AI</strong><p data-en="A creator channel and fanpage focused on AI engineering, coding, and applied technology education." data-vi="Kênh sáng tạo và fanpage tập trung vào kỹ thuật AI, lập trình và giáo dục công nghệ ứng dụng.">Kênh sáng tạo và fanpage tập trung vào kỹ thuật AI, lập trình và giáo dục công nghệ ứng dụng.</p></div>
 						</a>
 					</div>
 				</div>
@@ -1674,22 +1725,66 @@
 			<div class="section-inner">
 				<div class="contact-card">
 					<div>
-						<p class="section-kicker">Hợp tác cùng tôi</p>
-						<h2 id="contact-title">Cần một hệ thống AI trụ vững trong production?</h2>
-						<p>Tôi sẵn sàng cho các vị trí AI engineering, tư vấn, review kiến trúc chatbot, dự án tối ưu RAG và các hợp tác về Generative AI ứng dụng.</p>
+						<p class="section-kicker" data-en="Work With Me" data-vi="Hợp tác cùng tôi">Hợp tác cùng tôi</p>
+						<h2 id="contact-title" data-en="Need an AI system that can survive production?" data-vi="Cần một hệ thống AI trụ vững trong production?">Cần một hệ thống AI trụ vững trong production?</h2>
+						<p data-en="I am open to AI engineering roles, consulting conversations, chatbot architecture reviews, RAG optimization projects, and collaborations around applied Generative AI." data-vi="Tôi sẵn sàng cho các vị trí AI engineering, tư vấn, review kiến trúc chatbot, dự án tối ưu RAG và các hợp tác về Generative AI ứng dụng.">Tôi sẵn sàng cho các vị trí AI engineering, tư vấn, review kiến trúc chatbot, dự án tối ưu RAG và các hợp tác về Generative AI ứng dụng.</p>
 					</div>
 					<div class="contact-actions" aria-label="Liên kết liên hệ">
-						<a class="button button-primary" href="mailto:hdang1696@gmail.com?subject=Co%20hoi%20AI%20Engineering">Gửi Email</a>
-						<a class="button button-secondary" href="tel:+840395049120">Gọi điện</a>
+						<a class="button button-primary" href="mailto:hdang1696@gmail.com?subject=Co%20hoi%20AI%20Engineering" data-en="Email Me" data-vi="Gửi Email">Gửi Email</a>
+						<a class="button button-secondary" href="tel:+840395049120" data-en="Call Me" data-vi="Gọi điện">Gọi điện</a>
 						<a class="button button-secondary" href="https://linkedin.com/in/huyhocdata/" target="_blank" rel="noreferrer">LinkedIn</a>
 					</div>
 				</div>
 				<footer class="footer">
-					<span>Đặng Nguyễn Quang Huy - AI Engineer</span>
+					<span data-en="Dang Nguyen Quang Huy - AI Engineer" data-vi="Đặng Nguyễn Quang Huy - AI Engineer">Đặng Nguyễn Quang Huy - AI Engineer</span>
 					<span><a href="https://github.com/ZeusCoderBE/" target="_blank" rel="noreferrer">github.com/ZeusCoderBE</a> | <a href="mailto:hdang1696@gmail.com">hdang1696@gmail.com</a></span>
 				</footer>
 			</div>
 		</section>
 	</main>
+
+	<script>
+		(function () {
+			var STORAGE_KEY = "profile-lang";
+			var TITLES = {
+				vi: "Đặng Nguyễn Quang Huy | AI Engineer",
+				en: "Dang Nguyen Quang Huy | AI Engineer"
+			};
+
+			function applyLang(lang) {
+				if (lang !== "en" && lang !== "vi") lang = "vi";
+				document.documentElement.lang = lang;
+				var nodes = document.querySelectorAll("[data-en][data-vi]");
+				for (var i = 0; i < nodes.length; i++) {
+					var value = nodes[i].getAttribute("data-" + lang);
+					if (value !== null) nodes[i].textContent = value;
+				}
+				var buttons = document.querySelectorAll(".lang-toggle button");
+				for (var j = 0; j < buttons.length; j++) {
+					buttons[j].classList.toggle("is-active", buttons[j].getAttribute("data-lang") === lang);
+				}
+				if (TITLES[lang]) document.title = TITLES[lang];
+				try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+			}
+
+			function init() {
+				var saved = "vi";
+				try { saved = localStorage.getItem(STORAGE_KEY) || "vi"; } catch (e) {}
+				var buttons = document.querySelectorAll(".lang-toggle button");
+				for (var k = 0; k < buttons.length; k++) {
+					buttons[k].addEventListener("click", function () {
+						applyLang(this.getAttribute("data-lang"));
+					});
+				}
+				applyLang(saved);
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", init);
+			} else {
+				init();
+			}
+		})();
+	</script>
 </body>
 </html>
